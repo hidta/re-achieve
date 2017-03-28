@@ -1,0 +1,25 @@
+<div class="container">
+  <h2><%= @user.name %>のフォローワー</h2>
+  <div class="row">
+    <% @user.followers.each do |follower| %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+        <%= link_to profile_img(follower), user_path(follower)%>
+        <%= follower.email %>
+        <%= render 'follow_form', user: follower %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+
+  <h2><%= @user.name %>がフォローしている人</h2>
+  <div class="row">
+    <% @user.followed_users.each do |follower| %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+        <%= link_to profile_img(follower), user_path(follower)%>
+        <%= follower.email %>
+        <%= render 'follow_form', user: follower %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
