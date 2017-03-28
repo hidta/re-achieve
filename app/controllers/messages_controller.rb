@@ -33,7 +33,7 @@ class MessagesController < ApplicationController
   
   private
   def messages_params
-    pramas.require(:messages).permit(:body, :user_id)
+    paramas.require(:message).permit(:body, :user_id)
   end
   
 end
