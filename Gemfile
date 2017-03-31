@@ -48,9 +48,10 @@ gem 'dotenv-rails'
 gem 'capistrano-rails', group: :development
 
 group :development do
-  gem 'letter_opener_web'
+ # gem 'letter_opener_web'
   gem 'better_errors'
   gem "bullet"
+  gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
@@ -58,7 +59,6 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -70,8 +70,15 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'hirb'         # モデルの出力結果を表形式で表示するGem
   gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
-
   gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施', :require => "flog"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+end
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
 end
