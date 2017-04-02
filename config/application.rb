@@ -33,7 +33,7 @@ module Achieve
         controller_specs: true,
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
-      g.javascripts false
+      g.assets false
       g.helper false
       g.test_framework false
     end
